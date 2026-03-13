@@ -24,7 +24,7 @@ class MainApp extends StatelessWidget {
         theme: ThemeData(
           colorSchemeSeed: Colors.blue,
           appBarTheme: const AppBarTheme(
-            color: AppColors.primaryBlueColor,
+            backgroundColor: AppColors.primaryBlueColor,
             foregroundColor: Colors.white,
           ),
           filledButtonTheme: FilledButtonThemeData(

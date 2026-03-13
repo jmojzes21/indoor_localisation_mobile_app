@@ -1,0 +1,13 @@
+name: _
+publish_to: none
+
+environment:
+  sdk: ^3.6.0
+
+workspace:
+  - il_app
+  - il_core
+  - il_ws
+  - features/il_display_assets_map
+  - features/il_display_assets_table
+  - features/il_reports

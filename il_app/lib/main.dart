@@ -22,7 +22,7 @@ class MainApp extends StatelessWidget {
           GlobalCupertinoLocalizations.delegate,
         ],
         theme: ThemeData(
-          colorSchemeSeed: Colors.blue,
+          colorSchemeSeed: AppColors.primaryBlueColor,
           appBarTheme: const AppBarTheme(
             backgroundColor: AppColors.primaryBlueColor,
             foregroundColor: Colors.white,

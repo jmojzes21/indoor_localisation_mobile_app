@@ -11,7 +11,7 @@ class AppLogoWidget extends StatelessWidget {
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(20),
-          child: Image.asset('assets/images/sick-mobilisis-logo.png'),
+          child: Image.asset('assets/images/app-logo.png'),
         ),
         const SizedBox(height: 10),
         Text('Indoor Localization', style: Theme.of(context).textTheme.headlineLarge),

@@ -1,12 +1,17 @@
+import 'dart:convert';
+
 import 'package:il_core/il_entities.dart';
 import 'package:il_ws/src/services/asset_position_history_service.dart';
+
+import 'package:flutter/services.dart' as root_bundle;
 
 class FakeAssetPositionHistoryService implements IAssetPositionHistoryService {
   @override
   Future<List<AssetPositionHistory>> getPositionHistory(
       {required int assetId, required int floorMapId, required DateTime startDate, required DateTime endDate}) {
     return Future.delayed(Duration(milliseconds: 200), () {
-      return [];
+      if (floorMapId != 1) return [];
+      return _loadPositionHistory(assetId, floorMapId, startDate, endDate, 'assets/fake/location_history_1.txt');
     });
   }
 
@@ -51,5 +56,32 @@ class FakeAssetPositionHistoryService implements IAssetPositionHistoryService {
         ),
       ];
     });
+  }
+
+  static Future<List<AssetPositionHistory>> _loadPositionHistory(
+      int assetId, int floorMapId, DateTime startDate, DateTime endDate, String key) async {
+    var ls = LineSplitter();
+
+    var data = await root_bundle.rootBundle.loadString(key);
+    var lines = ls.convert(data).map((e) => e.trim()).where((e) => e.isNotEmpty);
+
+    int id = 1;
+    DateTime time = startDate;
+    var dtime = Duration(minutes: 1);
+
+    List<AssetPositionHistory> result = lines.map((line) {
+      var parts = line.split(',');
+      double x = double.parse(parts[0].trim());
+      double y = double.parse(parts[1].trim());
+
+      var p = AssetPositionHistory(id: id, assetId: assetId, x: x, y: y, timestamp: time, floorMapId: floorMapId);
+
+      id++;
+      time = time.add(dtime);
+
+      return p;
+    }).toList();
+
+    return result;
   }
 }

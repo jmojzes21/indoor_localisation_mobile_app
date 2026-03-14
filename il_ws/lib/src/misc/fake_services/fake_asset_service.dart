@@ -1,22 +1,18 @@
 import 'package:il_core/il_entities.dart';
+import 'package:il_ws/il_fake_services.dart';
 import 'package:il_ws/il_ws.dart';
 
 class FakeAssetService implements IAssetService {
   @override
   Future<List<Asset>> getAllAssets() async {
-    return Future.delayed(Duration(milliseconds: 500), () async {
+    return Future.delayed(Duration(milliseconds: 200), () async {
       var assets = <Asset>[];
 
-      var floorMapService = FloorMapService();
+      var floorMapService = FakeFloorMapService();
       var floorMaps = await floorMapService.getAllFloorMaps();
 
       for (var floorMap in floorMaps) {
-        var floorMapId = floorMap.id;
-        assets.addAll([
-          Asset(id: 1, name: 'Asset 1', x: 100, y: 100, lastSync: DateTime.now(), active: true, floorMapId: floorMapId, floorMap: floorMap),
-          Asset(id: 2, name: 'Asset 2', x: 500, y: 500, lastSync: DateTime.now(), active: true, floorMapId: floorMapId, floorMap: floorMap),
-          Asset(id: 3, name: 'Asset 3', x: 1000, y: 1000, lastSync: DateTime.now(), active: true, floorMapId: floorMapId, floorMap: floorMap),
-        ]);
+        assets.addAll(getAssets(floorMap.id));
       }
 
       return assets;
@@ -25,13 +21,22 @@ class FakeAssetService implements IAssetService {
 
   @override
   Future<List<Asset>> getAssetsByFloorMap(int floorMapId) async {
-    return Future.delayed(Duration(milliseconds: 500), () {
-      return [
-        Asset(id: 1, name: 'Asset 1', x: 100, y: 100, lastSync: DateTime.now(), active: true, floorMapId: floorMapId),
-        Asset(id: 2, name: 'Asset 2', x: 500, y: 500, lastSync: DateTime.now(), active: true, floorMapId: floorMapId),
-        Asset(id: 3, name: 'Asset 3', x: 1000, y: 1000, lastSync: DateTime.now(), active: true, floorMapId: floorMapId),
-      ];
+    return Future.delayed(Duration(milliseconds: 200), () {
+      return getAssets(floorMapId);
     });
+  }
+
+  List<Asset> getAssets(int floorMapId) {
+    int n = floorMapId * 10;
+    return [
+      Asset(id: n, name: 'Asset A1', x: 100, y: 100, lastSync: DateTime.now(), active: true, floorMapId: floorMapId),
+      Asset(
+          id: n + 1, name: 'Asset B2', x: 200, y: 200, lastSync: DateTime.now(), active: true, floorMapId: floorMapId),
+      Asset(
+          id: n + 2, name: 'Asset C3', x: 300, y: 300, lastSync: DateTime.now(), active: true, floorMapId: floorMapId),
+      Asset(
+          id: n + 3, name: 'Asset D4', x: 400, y: 400, lastSync: DateTime.now(), active: true, floorMapId: floorMapId),
+    ];
   }
 
   @override

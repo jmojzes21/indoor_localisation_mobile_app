@@ -5,7 +5,7 @@ import 'package:il_app/logic/services/session_service.dart';
 import 'package:il_app/logic/vm/login_page_view_model.dart';
 import 'package:il_app/ui/widgets/app_logo.dart';
 import 'package:il_app/ui/widgets/message_card.dart';
-import 'package:il_ws/il_ws.dart';
+import 'package:il_ws/il_fake_services.dart';
 import 'package:provider/provider.dart';
 
 class LoginPage extends StatelessWidget {
@@ -20,7 +20,7 @@ class LoginPage extends StatelessWidget {
       body: ChangeNotifierProvider(
         create: (context) => LoginPageViewModel(
           sessionService: SessionService(),
-          authService: AuthenticationService(),
+          authService: FakeAuthenticationService(),
           navigateToHomePage: () => context.pushReplacement('/home'),
         ),
         child: buildBody(),
@@ -56,7 +56,9 @@ class LoginPage extends StatelessWidget {
                 border: const OutlineInputBorder(),
                 suffixIcon: IconButton(
                   onPressed: () => model.togglePasswordVisibility(),
-                  icon: !model.showPassword ? const FaIcon(FontAwesomeIcons.solidEye) : const FaIcon(FontAwesomeIcons.solidEyeSlash),
+                  icon: !model.showPassword
+                      ? const FaIcon(FontAwesomeIcons.solidEye)
+                      : const FaIcon(FontAwesomeIcons.solidEyeSlash),
                 ),
               ),
               obscureText: !model.showPassword,

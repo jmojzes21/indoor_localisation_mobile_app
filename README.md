@@ -24,44 +24,44 @@ The application integrates with the backend server, but for a simpler demonstrat
 
 ### Login page
 
-<img height="700" alt="Home" src="images/login.jpg">
+<img height="700" alt="login page" src="images/login.jpg">
 
 ### Home page
 
-<img height="700" alt="Home" src="images/home.jpg">
+<img height="700" alt="home page" src="images/home.jpg">
 
 ### Assets overview
 
-<img height="700" alt="Home" src="images/assets.jpg">
+<img height="700" alt="assets overview" src="images/assets.jpg">
 
 ### Asset dashboard - position tracking
 
 #### Display asset positions in real time on interactive map
 
-<img alt="Home" src="images/live_asset_position.gif">
+<img alt="live asset positions map" src="images/live_asset_position.gif">
 
 #### Generate live asset heatmap 
 
-<img alt="Home" src="images/live_heatmap.gif">
+<img alt="live heatmap" src="images/live_heatmap.gif">
 
 #### Display asset positions in real time as a table
 
-<img height="700" alt="Home" src="images/dashboard_table.jpg">
+<img height="700" alt="live asset positions table" src="images/dashboard_table.jpg">
 
-#### Asset reports
+### Asset reports
 
 #### Generate report for specific asset and time period
 
-<img height="700" alt="Home" src="images/asset_reports.jpg">
+<img height="700" alt="asset reports" src="images/asset_reports.jpg">
 
 #### Asset heatmap report
 
-<img height="700" alt="Home" src="images/heatmap.jpg">
+<img height="700" alt="heatmap report" src="images/heatmap.jpg">
 
 #### Asset tailmap report
 
-<img alt="Home" src="images/tailmap.gif">
+<img alt="tailmap report" src="images/tailmap.gif">
 
 #### Asset zone retention report
 
-<img height="700" alt="Home" src="images/zone_retention.jpg">
+<img height="700" alt="zone retention report" src="images/zone_retention.jpg">

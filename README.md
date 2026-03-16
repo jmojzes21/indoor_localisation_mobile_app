@@ -1,67 +1,66 @@
-# Indoor Localization Mobile App
+# Indoor Localization
 
 ## Overview
-The **Indoor Localization Mobile App** is a Flutter-based application designed to provide users with an intuitive interface for indoor navigation and asset management. It integrates seamlessly with the backend infrastructure to offer real-time data visualization, asset tracking, and navigation assistance.
+
+The **Indoor Localization** is a Flutter application
+designed to track assets within a facility. The application
+was developed as a team project in the Program Analysis and Development course as a Work-Based Learning project.
+The application integrates with the backend server, but for a simpler demonstration, the actual web services have been replaced with virtual ones that return mock data.
 
 ## Features
-- **Interactive Floor Maps**: Displays indoor floor maps with detailed overlays of assets.
-- **Data Visualization**: Includes heatmaps and other visual tools for tracking asset usage and movement.
-- **Reporting Tools**: Generate and view reports for individual or grouped assets.
+* Asset tracking within the facility in real time using MQTT
+* Interactive facility map (zooming, panning)
+* Overview of available assets
+* Overview of asset movement reports
+* Model-View-ViewModel architecture
+* Modular design (different ways to display resources)
 
-## Technology Stack
-- **Framework**: Flutter (Dart)
-- **Platform**: Supports Android
-- **Backend Integration**: API communication with the Indoor Localization Backend
+## Technology
+* Flutter
+* Supported platforms: Android, Windows (only for developing)
 
-## Getting Started
+## Screens
 
-### Prerequisites
-- Flutter SDK installed ([Get Started with Flutter](https://flutter.dev/docs/get-started/install))
-- Android Studio for emulator setup
-- Access to the Indoor Localization Backend API
+### Login page
 
-### Installation
+<img height="700" alt="login page" src="images/login.jpg">
 
-1. Install Android Studio
+### Home page
 
-To build an Android application, Flutter requires Android Studio to be installed. To install Android Studio, please follow the official instructions available at https://developer.android.com/studio/install .
+<img height="700" alt="home page" src="images/home.jpg">
 
-2. Install Android SDK Command-line Tools
+### Assets overview
 
-In Android Studio, open Settings. Then navigate to Languages & Frameworks > Android SDK. Then select SDK Tools tab and check Android SDK Command-line Tools item and click Apply.
-![SDK_commandline_tools](https://github.com/user-attachments/assets/de2c9b75-d168-43b9-adcc-0fdbacaaea56)
+<img height="700" alt="assets overview" src="images/assets.jpg">
 
-3. Install Flutter framework
+### Asset dashboard - position tracking
 
-To install and configure Flutter, please follow the official instructions available at https://docs.flutter.dev/get-started/install. If you did everything correctly, after running the shell command flutter doctor from any working directory, you should see an output similar to below.
-![Install_flutter_framework](https://github.com/user-attachments/assets/6e173534-527e-4037-a1e7-dc3d3dffcf10)
+#### Display asset positions in real time on interactive map
 
-4. Prepare IDE
+<img alt="live asset positions map" src="images/live_asset_position.gif">
 
-Next, make sure to prepare your code editor. You can use the following editors:
+#### Generate live asset heatmap 
 
-Visual Studio Code (recommended),
+<img alt="live heatmap" src="images/live_heatmap.gif">
 
-Android Studio,
+#### Display asset positions in real time as a table
 
-IntelliJ IDEA.
+<img height="700" alt="live asset positions table" src="images/dashboard_table.jpg">
 
-To set up your code editor, please follow the official instructions available at https://docs.flutter.dev/get-started/editor. 
+### Asset reports
 
-5. Clone repository
+#### Generate report for specific asset and time period
 
-To run the project, clone this repository https://github.com/kjacmenja21/indoorlocalization_mobile_app to your computer.
+<img height="700" alt="asset reports" src="images/asset_reports.jpg">
 
-6. Run project (Visual Studio Code)
+#### Asset heatmap report
 
-In the root directory of the repository, you will see a file il_app_project.code-workspace. This is a Visual Studio Code Workspace file (see https://code.visualstudio.com/docs/editor/workspaces) and you can open the project with this file.
+<img height="700" alt="heatmap report" src="images/heatmap.jpg">
 
-Next, in the il_app project, find and open the file main.dart. This file is an entry point to the Flutter application. Once this file is open, you will be able to easily run the project. Also, don’t forget to prepare your physical or virtual Android device.
+#### Asset tailmap report
 
-If needed, run the command flutter pub get in il_app to fetch all dependent packages.
-![Run_project](https://github.com/user-attachments/assets/97241bac-6ea4-4a8d-b4e5-5d7c7b4fa852)
+<img alt="tailmap report" src="images/tailmap.gif">
 
-7. Run project (Android Studio)
+#### Asset zone retention report
 
-In Android Studio, open the il_app project.
-![Run_project_AS](https://github.com/user-attachments/assets/3411950f-ec83-4ece-aff2-953662ad4b5d)
+<img height="700" alt="zone retention report" src="images/zone_retention.jpg">

@@ -8,7 +8,7 @@ import 'package:il_app/ui/widgets/select_asset_dialog.dart';
 import 'package:il_core/il_entities.dart';
 import 'package:il_core/il_widgets.dart';
 import 'package:il_reports/il_reports.dart';
-import 'package:il_ws/il_ws.dart';
+import 'package:il_ws/il_fake_services.dart';
 import 'package:provider/provider.dart';
 
 class AssetReportsPage extends StatelessWidget {
@@ -54,18 +54,18 @@ class AssetReportsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (context) => AssetReportsPageViewModel(
-        assetService: AssetService(),
-        floorMapService: FloorMapService(),
+        assetService: FakeAssetService(),
+        floorMapService: FakeFloorMapService(),
         reportGenerators: [
           AssetHeatmapReportGenerator(
-            positionHistoryService: AssetPositionHistoryService(),
+            positionHistoryService: FakeAssetPositionHistoryService(),
           ),
           AssetTailmapReportGenerator(
-            positionHistoryService: AssetPositionHistoryService(),
+            positionHistoryService: FakeAssetPositionHistoryService(),
           ),
           AssetZoneRetentionTimeReportGenerator(
-            positionHistoryService: AssetPositionHistoryService(),
-            floorMapService: FloorMapService(),
+            positionHistoryService: FakeAssetPositionHistoryService(),
+            floorMapService: FakeFloorMapService(),
           ),
         ],
         openReportViewPage: (generator, data) {

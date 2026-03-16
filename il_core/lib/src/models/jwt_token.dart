@@ -3,21 +3,19 @@ import 'dart:convert';
 class JwtToken {
   final String value;
 
-  late int _expirationTime;
-
-  JwtToken({required this.value}) {
-    _expirationTime = _getExpirationTime(value);
-  }
+  JwtToken({required this.value});
 
   factory JwtToken.decode(String token) {
     return JwtToken(value: token);
   }
 
   bool isExpired() {
+    int expirationTime = _getExpirationTime(value);
+
     DateTime now = DateTime.now();
     int seconds = now.millisecondsSinceEpoch ~/ 1000;
 
-    return seconds >= _expirationTime;
+    return seconds >= expirationTime;
   }
 
   int _getExpirationTime(String value) {

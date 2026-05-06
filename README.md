@@ -1,66 +1,33 @@
-# Indoor Localization
+# Indoor Localisation
 
 ## Overview
 
-The **Indoor Localization** is a Flutter application
-designed to track assets within a facility. The application
-was developed as a team project in the Program Analysis and Development course as a Work-Based Learning project.
-The application integrates with the backend server, but for a simpler demonstration, the actual web services have been replaced with virtual ones that return mock data.
+<p>
+  The Indoor Localisation is a Flutter application designed to track assets within a facility.
+  The application was developed as a team project in the Program Analysis and Development course
+  as a Work-Based Learning project. My role in the team was to create a mobile application and
+  integrate it with the backend server.
+</p>
 
-## Features
-* Asset tracking within the facility in real time using MQTT
-* Interactive facility map (zooming, panning)
-* Overview of available assets
-* Overview of asset movement reports
-* Model-View-ViewModel architecture
-* Modular design (different ways to display resources)
+<p>Features:</p>
+<ul>
+  <li>Asset tracking within the facility in real time using MQTT</li>
+  <li>Interactive facility map (zooming, panning)</li>
+  <li>Overview of available assets</li>
+  <li>Overview of asset movement reports</li>
+  <li>Model-View-ViewModel architecture</li>
+  <li>
+    Modular design (different ways to display live assets) Support for both real and mock web
+    services to support application development without a running backend server
+  </li>
+</ul>
 
-## Technology
-* Flutter
-* Supported platforms: Android, Windows (only for developing)
+## Technology stack
+<ul>
+  <li><b>Frontend:</b> Flutter (Android, Windows for development), React (Web)</li>
+  <li><b>Backend:</b> Python FastAPI, Node-RED</li>
+  <li><b>Database:</b> PostgreSQL</li>
+</ul>
 
-## Screens
-
-### Login page
-
-<img height="700" alt="login page" src="images/login.jpg">
-
-### Home page
-
-<img height="700" alt="home page" src="images/home.jpg">
-
-### Assets overview
-
-<img height="700" alt="assets overview" src="images/assets.jpg">
-
-### Asset dashboard - position tracking
-
-#### Display asset positions in real time on interactive map
-
-<img alt="live asset positions map" src="images/live_asset_position.gif">
-
-#### Generate live asset heatmap 
-
-<img alt="live heatmap" src="images/live_heatmap.gif">
-
-#### Display asset positions in real time as a table
-
-<img height="700" alt="live asset positions table" src="images/dashboard_table.jpg">
-
-### Asset reports
-
-#### Generate report for specific asset and time period
-
-<img height="700" alt="asset reports" src="images/asset_reports.jpg">
-
-#### Asset heatmap report
-
-<img height="700" alt="heatmap report" src="images/heatmap.jpg">
-
-#### Asset tailmap report
-
-<img alt="tailmap report" src="images/tailmap.gif">
-
-#### Asset zone retention report
-
-<img height="700" alt="zone retention report" src="images/zone_retention.jpg">
+## Project gallery
+* [Link to project gallery](https://jmojzes21.github.io/portfolio_page/projects/indoor-localisation#gallery)

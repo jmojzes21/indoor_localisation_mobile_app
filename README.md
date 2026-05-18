@@ -16,10 +16,8 @@
   <li>Overview of available assets</li>
   <li>Overview of asset movement reports</li>
   <li>Model-View-ViewModel architecture</li>
-  <li>
-    Modular design (different ways to display live assets) Support for both real and mock web
-    services to support application development without a running backend server
-  </li>
+  <li>Modular design (different ways to display live assets)</li>
+  <li>Support for both real and mock web services to support application development without a running backend server</li>
 </ul>
 
 ## Technology stack

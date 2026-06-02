@@ -3,22 +3,19 @@
 ## Overview
 
 <p>
-  The Indoor Localisation is a Flutter application designed to track assets within a facility.
-  The application was developed as a team project in the Program Analysis and Development course
-  as a Work-Based Learning project. My role in the team was to create a mobile application and
-  integrate it with the backend server.
+The Indoor Localisation allows users to track assets within a facility. The application was developed as a team project in the Program Analysis and Development course as a Work-Based Learning project.
 </p>
 
-<p>Features:</p>
-<ul>
-  <li>Asset tracking within the facility in real time using MQTT</li>
-  <li>Interactive facility map (zooming, panning)</li>
-  <li>Overview of available assets</li>
-  <li>Overview of asset movement reports</li>
-  <li>Model-View-ViewModel architecture</li>
-  <li>Modular design (different ways to display live assets)</li>
-  <li>Support for both real and mock web services to support application development without a running backend server</li>
-</ul>
+### Features
+* Asset tracking within the facility in real time using MQTT
+* Overview of available assets
+* Overview of asset movement reports
+* Model-View-ViewModel architecture
+* Modular design (different ways to display live assets)
+* Support for both real and mock web services to support application development without a running backend server
+
+### My role in the team
+* Developed the complete frontend of a mobile application using Flutter, including implementation of services for backend communication and data retrieval through APIs
 
 ## Technology stack
 <ul>
